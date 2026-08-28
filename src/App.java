@@ -117,7 +117,7 @@ public class App {
             codigo1(vetor);
             termino = System.nanoTime();
             duracao = (double)(termino - inicio) * nanoToMilli;
-            System.out.printf("%,d; %,d\n", tamanho, operacoes, duracao);
+            System.out.printf("%,d; %,d, %.2f\n", tamanho, operacoes, duracao);
         }
     }
 }
