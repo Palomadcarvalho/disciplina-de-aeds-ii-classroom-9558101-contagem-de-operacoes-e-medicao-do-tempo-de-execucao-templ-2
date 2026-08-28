@@ -42,8 +42,10 @@ public class App {
         int resposta = 0;
         for (int i = 0; i < vetor.length; i += 2) {
             resposta += vetor[i]%2;
+            operacoes++;
         }
         return resposta;
+    }
     }
 
     /**
@@ -105,6 +107,17 @@ public class App {
         
     }
     public static void main(String[] args) {
-        
+        int tamanho;
+        System.out.println("Número de operações e tempo de execução do código 1");
+        for (int i = 0; i < tamanhosTesteGrande.length; i++){
+            tamanho = tamanhosTesteGrande[i];
+            int[] vetor = gerarVetor(tamanho);
+            operacoes = 0;
+            inicio = System.nanoTime();
+            codigo1(vetor);
+            termino = System.nanoTime();
+            duracao = (double)(termino - inicio) * nanoToMilli;
+            System.out.printf("%,d; %,d\n", tamanho, operacoes, duracao);
+        }
     }
 }
